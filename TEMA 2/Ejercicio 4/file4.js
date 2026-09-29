@@ -9,6 +9,7 @@ document.write("El area es: " + area + "<br>"); // Salto de línea con br
 
 // Aumentamos el radio un 25% y calculamos de nuevo el área
 // He definido nueva variable "areaconaumento" y añadido el Operador de decremento *=
-let areaconaumento = (area *= 1.25);   
+let radioconaumento = (radio *= 1.25);
+area = pi * (radioconaumento ** 2)   
 // Mostramos de nuevo el resultado con "document.write"
-document.write("El area con aumento del radio de 25% es: " + areaconaumento);
+document.write("El area con aumento del radio de 25% es: " + area);

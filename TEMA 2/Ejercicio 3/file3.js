@@ -1,7 +1,7 @@
 // Crea una variable inicial de tipo BigInt
-let variable = BigInt; 
+let variable = 222n; 
 // Muestra un alert con la función typeof de la variable inicial vacía con BigInt
-alert(typeof variable);
+alert("Tipo inicial (vacía): " + typeof variable);
 
 // Pide un número por el prompt y guárdalo en esta misma variable
 let numero = prompt("Introduce un número: ");
