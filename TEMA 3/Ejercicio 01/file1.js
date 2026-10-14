@@ -1,0 +1,40 @@
+/* 
+(Math y datos numéricos) 
+
+Vamos a simular sorteo de lotería. 
+Para ello, solicita un número en el rango del 1 al 10 al usuario. 
+
+Primero valida que el número introducido sea correcto con las funciones estudiadas en este bloque. 
+Después genera un número aleatorio. 
+
+Si los números coinciden el usuario habrá sido agraciado, en caso
+contrario no
+*/
+
+let num = Number (prompt("Introduce un número del 1 al 10: "));
+
+// Primero comprobamos el número:
+// (!) si es distinto de finito o menor que 1 o mayor que 0, salta el alert.
+if (!isFinite(num) || num < 1 || num > 10) { 
+    alert("Número incorrecto. Debe ser un número entre 1 y 10")
+} else {
+
+    /* Generar número aleatorio entre 1 y 10
+    A diferencia del tutorial, no parametrizamos y se multiplica directamente por 10
+    Este nos da valores del 0 al 9 con decimales a los que tenemos que sumar el rango mínimo (1 en este caso)
+    y de ahi tenemos del 1 al 10 quitando la parte entera con Math.floor
+    */
+
+    // Creamos una constante para el número ganador. Usamos MathRandom con MathFloor
+    const numAleatorio = Math.floor(Math.random() * 10) + 1; // Se suma 1 por el MathFloor. Mathfloor redondea hacia abajo... REVISAR EN CASA !!
+
+    // Mostramos resultado
+    alert("El número ganador, generado aleatoriamente es: " + numAleatorio);
+    
+    // Si el número introducido coincide con el número aleatorio, ha ganado. 
+    if(num === numAleatorio){
+        alert("Enhorabuena! Tu número coincide con el ganador");
+    } else {  // En caso contrario, ha perdido
+        alert("Lo sentimos, no has ganado");
+    }
+}
