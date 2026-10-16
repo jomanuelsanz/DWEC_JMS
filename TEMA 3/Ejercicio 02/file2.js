@@ -22,11 +22,38 @@ El script debe:
 
 */
 
-let precioBase = Number(promt("Introduce un precio base"));
-let descuento = Number(prompt("Introduce un número con decimales, para representar un descuento"));
+let precioBaseInput = prompt("Introduce un precio base");
+let descuentoInput = prompt("Introduce un número con decimales, para representar un descuento");
 
+
+// Convertir entradas a números reales
+let precioBase = parseFloat(precioBaseInput);
+let descuento = parseFloat(descuentoInput);
+
+
+// Validar entradas
 if (isNaN(precioBase) || isNaN(descuento)) {   // Comprueba si precioBase y descuento son números
     alert ("Deben ser números validos")
+} else {
 
-}
+    // Calcular descuento
+    let precioFinal = precioBase - (precioBase * (descuento / 100));
+
+    // Comprobamos si el resultado es finito
+    if (isFinite(precioFinal)){
+        // Redondear a dos decimales
+        let precioFinalRedondeado = precioFinal.toFixed(2);
+        // Mostrar resultados
+        alert(`Precio final: €${precioFinalRedondeado}`);
+
+    } else {
+        alert("El resultado es infinito")
+    }
+} 
+
+
+
+
+
+
 
