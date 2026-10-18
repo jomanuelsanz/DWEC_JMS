@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Nombre del alumno: </h2>
+    <p id="notaFinal">Resultado de la evaluación: </strong></p>
+    <div class="mensaje"></div>
+    <script>
+
+        let datos= prompt("Introduce tu nombre y apellidos:");
+        let calificacion=Number(prompt("Introduce una calificación de 0 a 10: "));
+        let resultado="";
+
+       
+        if (calificacion<5){
+            resultado= "suspenso";
+        }
+        else if (calificacion<6){
+            resultado="aprobado";
+
+        }
+        else if (calificacion <7){
+            resultado="bien";
+        }
+        else if(calificacion <9){
+            resultado="notable";
+        }
+        else {
+            resultado= "sobresaliente";
+        }
+        //cambiar h2
+        document.getElementsByTagName("h2")[0].textContent = "Nombre del alumno: " + datos;
+
+        //añadir la nota al parrafo. Poner comillas simples invertidas
+        document.getElementById("notaFinal").innerHTML = `Resultado de la evaluación: <strong>${calificacion}</strong>`;
+        //resultado
+        document.querySelector(".mensaje").textContent = `Calificación: ${resultado}`;
+
+
+
+
+
+       
+    </script>
+</body>
+</html>

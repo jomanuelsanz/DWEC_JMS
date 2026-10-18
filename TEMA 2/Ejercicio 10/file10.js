@@ -9,7 +9,7 @@ Si falla los 3 intentos, se bloquea el acceso con un mensaje de "Tarjeta bloquea
 El script debe usar un bucle “while” o “do while” para controlar los intentos.
 */
 
-const PIN = "1234";  //Lo guardamos como texto porque promt() devuelve texto
+const PIN = "1234";  // Lo guardamos como texto porque promt() devuelve texto
 let i = 0;
 let acierto = false;  // Estado inicial. Es falso por defecto, cambia a TRUE solo si el PIN es correcto 
 
