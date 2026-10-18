@@ -1,1 +1,0 @@
-alert("Desde el JS externo");
