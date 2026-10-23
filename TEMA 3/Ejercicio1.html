@@ -1,4 +1,4 @@
-/* 
+<!--
 (Math y datos numéricos) 
 
 Vamos a simular sorteo de lotería. 
@@ -9,9 +9,18 @@ Después genera un número aleatorio.
 
 Si los números coinciden el usuario habrá sido agraciado, en caso
 contrario no
-*/
+-->
 
-let num = Number (prompt("Introduce un número del 1 al 10: "));
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+
+
+  <script>
+
+    let num = Number (prompt("Introduce un número del 1 al 10: "));
 
 // Primero comprobamos el número:
 // (!) si es distinto de finito o menor que 1 o mayor que 0, salta el alert.
@@ -38,3 +47,10 @@ if (!isFinite(num) || num < 1 || num > 10) {
         alert("Lo sentimos, no has ganado");
     }
 }
+
+
+  </script>
+
+</body>
+
+</html>
