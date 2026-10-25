@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de JMS JavaScript</title>
+
+    <!-- Hoja de estilos del juego -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Script cargado desde head -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Juego de JMS JavaScript</h1>
+        <p>Completa misiones y consigue puntos.</p>
+    </header>
+
+    <main>
+        <section id="perfil">
+            <h2>Perfil del jugador</h2>
+
+            <form id="formulario-perfil">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fecha-nacimiento"
+                       name="fecha-nacimiento" required>
+
+                <button type="submit">Crear perfil</button>
+            </form>
+
+            <p id="mensaje" aria-live="polite"></p>
+        </section>
+
+        <section id="juego" hidden>
+            <h2>Zona de juego</h2>
+            <p id="bienvenida"></p>
+            <p>Puntuación: <span id="puntuacion">0</span></p>
+        </section>
+    </main>
+</body>
+</html>

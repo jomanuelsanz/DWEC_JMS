@@ -1,0 +1,46 @@
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f4f8;
+    color: #222;
+}
+
+/* Cabecera */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Paneles */
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+button {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Mensajes */
+#mensaje {
+    font-weight: bold;
+}
