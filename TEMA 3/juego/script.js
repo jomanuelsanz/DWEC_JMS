@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const nombre = document.getElementById("nombre");
     const fechaNacimiento = document.getElementById("fecha-nacimiento");
     const mensaje = document.getElementById("mensaje");
-    const perfil = document.getElementById("perfil");
     const juego = document.getElementById("juego");
     const bienvenida = document.getElementById("bienvenida");
 
@@ -93,6 +92,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Mostramos el nombre y la edad del jugador.
         bienvenida.textContent = "¡Bienvenido, " + nombreJugador + "! Tienes " + edad + " años.";
+
+        // Eliminamos las clases anteriores por si se vuelve a enviar el formulario.
+        bienvenida.classList.remove("color-joven");
+        bienvenida.classList.remove("color-experimentado");
+
+        // Personalizamos el color del mensaje según la edad.
+        if (edad < 30) {
+            // Los jugadores de 18 a 29 años tendrán este estilo.
+            bienvenida.classList.add("color-joven");
+        } else {
+            // Los jugadores de 30 años o más tendrán este otro estilo.
+            bienvenida.classList.add("color-experimentado");
+        }
 
         // Mostramos la zona de juego.
         juego.hidden = false;

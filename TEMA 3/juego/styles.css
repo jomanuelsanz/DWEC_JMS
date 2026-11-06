@@ -44,3 +44,17 @@ button {
 #mensaje {
     font-weight: bold;
 }
+
+
+/* Estilo para jugadores menores de 30 años. */
+.color-joven {
+    color: #1976d2;
+    font-weight: bold;
+}
+
+/* Estilo para jugadores de 30 años o más. */
+.color-experimentado {
+    color: #8e44ad;
+    font-weight: bold;
+}
+
