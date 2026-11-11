@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const botonComprobar = document.getElementById("comprobar");
     const botonPista = document.getElementById("pista");
     const botonNuevaOperacion = document.getElementById("nueva-operacion");
+    const botonAyuda = document.getElementById("ayuda");
     const resultadoHTML = document.getElementById("resultado");
     const textoPista = document.getElementById("texto-pista");
 
@@ -237,7 +238,7 @@ function leerCookie(nombre) {
 
             puntuacionHTML.textContent = puntuacion;
             respuestaCorrecta = true;
-            
+
             // Guardamos la puntuación actual en sessionStorage.
             sessionStorage.setItem("puntuacion", puntuacion);
 
@@ -273,4 +274,18 @@ function leerCookie(nombre) {
         generarOperacion();
     });
 
+    // Abrimos una ventana adicional con información del juego.
+    botonAyuda.addEventListener("click", function () {
+
+    let ventana = window.open("", "ventanaAyuda", "width=400,height=300");
+
+    if (ventana) {
+        ventana.document.write("<h1>Ayuda del juego</h1>");
+        ventana.document.write("<p>Resuelve las operaciones matemáticas para conseguir puntos.</p>");
+        ventana.document.write("<p>Respuesta correcta sin pista: 10 puntos.</p>");
+        ventana.document.write("<p>Respuesta correcta con pista: 5 puntos.</p>");
+        ventana.document.write("<p>Tu puntuación actual es: " + puntuacion + "</p>");
+    }
+    });
+    
 });
