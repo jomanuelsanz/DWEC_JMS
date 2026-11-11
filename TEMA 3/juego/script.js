@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const bienvenida = document.getElementById("bienvenida");
 
     const puntuacionHTML = document.getElementById("puntuacion");
+    const mejorPuntuacionHTML = document.getElementById("mejor-puntuacion");
     const operacionHTML = document.getElementById("operacion");
     const respuestaHTML = document.getElementById("respuesta");
     const botonComprobar = document.getElementById("comprobar");
@@ -29,6 +30,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Array donde guardaremos las operaciones acertadas.
     let historial = [];
+    // Recuperamos la mejor puntuación guardada en el navegador.
+let mejorPuntuacion = Number(localStorage.getItem("mejorPuntuacion")) || 0;
+mejorPuntuacionHTML.textContent = mejorPuntuacion;
+
+// Recuperamos el nombre guardado en la cookie.
+let nombreGuardado = leerCookie("nombreJugador");
+
+if (nombreGuardado !== "") {
+    nombre.value = nombreGuardado;
+}
+
+// Función para guardar el nombre en una cookie.
+function guardarCookie(nombre) {
+    document.cookie = "nombreJugador=" + encodeURIComponent(nombre) + "; max-age=2592000; path=/";
+}
+
+// Función para leer una cookie.
+function leerCookie(nombre) {
+    let cookies = document.cookie.split("; ");
+
+    for (let cookie of cookies) {
+        let partes = cookie.split("=");
+
+        if (partes[0] === nombre) {
+            return decodeURIComponent(partes[1]);
+        }
+    }
+
+    return "";
+}
 
     // Validamos el formulario del perfil.
     formulario.addEventListener("submit", function (evento) {
@@ -86,6 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Formateamos el nombre utilizando métodos de String.
         nombreJugador = nombreJugador.slice(0, 1).toUpperCase() +
                         nombreJugador.slice(1).toLowerCase();
+        // Guardamos el nombre del jugador en una cookie.
+        guardarCookie(nombreJugador);
 
         mensaje.textContent = "Perfil creado correctamente.";
 
@@ -107,6 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
         puntuacion = 0;
         historial = [];
         puntuacionHTML.textContent = puntuacion;
+
+        // Guardamos la puntuación actual de la sesión.
+        sessionStorage.setItem("puntuacion", puntuacion);
         generarOperacion();
     });
 
@@ -201,6 +237,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             puntuacionHTML.textContent = puntuacion;
             respuestaCorrecta = true;
+            
+            // Guardamos la puntuación actual en sessionStorage.
+            sessionStorage.setItem("puntuacion", puntuacion);
+
+            // Si superamos el récord, lo guardamos en localStorage.
+            if (puntuacion > mejorPuntuacion) {
+            mejorPuntuacion = puntuacion;
+            localStorage.setItem("mejorPuntuacion", mejorPuntuacion);
+            mejorPuntuacionHTML.textContent = mejorPuntuacion;
+            }
 
             // Guardamos la operación acertada en el array.
             historial.push(operacionActual.texto + " = " + operacionActual.respuesta);
