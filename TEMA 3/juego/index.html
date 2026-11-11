@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,7 @@
     <!-- Script cargado desde head -->
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1>Mi aventura JavaScript</h1>
@@ -27,8 +28,7 @@
                 <input type="text" id="nombre" name="nombre">
 
                 <label for="fecha-nacimiento">Fecha de nacimiento:</label>
-                <input type="date" id="fecha-nacimiento"
-                       name="fecha-nacimiento">
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
 
                 <button type="submit">Crear perfil</button>
             </form>
@@ -40,7 +40,25 @@
             <h2>Zona de juego</h2>
             <p id="bienvenida"></p>
             <p>Puntuación: <span id="puntuacion">0</span></p>
+            
+
+            <!-- Primera operación matemática -->
+            <h3>El reto matemático</h3>
+
+            <p id="operacion">Pulsa el botón para comenzar.</p>
+
+            <label for="respuesta">Tu respuesta:</label>
+            <input type="number" id="respuesta">
+
+            <button type="button" id="comprobar">Comprobar</button>
+            <button type="button" id="pista">Ver pista</button>
+            <button type="button" id="nueva-operacion">Nueva operación</button>
+
+
+            <p id="resultado"></p>
+            <p id="texto-pista"></p>
         </section>
     </main>
 </body>
+
 </html>
